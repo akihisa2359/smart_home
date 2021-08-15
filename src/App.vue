@@ -4,7 +4,15 @@
       app
       color="primary"
       dark
+      src="https://picsum.photos/1920/1080?random"
+      prominent
     >
+      <template v-slot:img="{ props }">
+        <v-img
+          v-bind="props"
+          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+        ></v-img>
+      </template>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -37,7 +45,7 @@
       </v-btn>
     </v-app-bar>
 
-    <v-main>
+    <v-main id="main">
       <router-view/>
     </v-main>
   </v-app>
@@ -53,3 +61,9 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+  #main {
+    background: rgba(219, 219, 219, 0.183)
+  }
+</style>
